@@ -33,13 +33,7 @@ https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8
 ![ワイヤーフレーム図](app/assets/images/wireframe.png)
 
 # 使用gem一覧
-## 辞書機能
-* rails-i18n
-## ログイン機能
-* devise
-## アドミン機能
-* rails_admin
-* cancancan
+
 ## 検索機能
 * ransack
 ## デバッグ
@@ -53,13 +47,6 @@ https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8
 * launchy
 * capybara
 * webdrivers
-
-# セットアップ
-* 1 git clone git@github.com:yujiharinezumi/Polybility.git
-* 2 bundle install
-* 3 rails db:create db:migrate
-* 4 rails db:seed
-* 5 rails s
 
 # アプリ製作予定
 + 2/13 要件定義完成
