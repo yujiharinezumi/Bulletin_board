@@ -27,10 +27,10 @@ https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8
 ![ER図](app/assets/images/er.png)
 # 画面遷移図
 https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8hKE/edit#gid=1330771236
-![画面繊維図](app/assets/images/wireframe.png)
+![画面繊維図](app/assets/images/screen.png)
 # ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8hKE/edit#gid=828425960
-![ワイヤーフレーム図](app/assets/images/screen.png)
+![ワイヤーフレーム図](app/assets/images/wireframe.png)
 
 # 使用gem一覧
 ## 辞書機能
