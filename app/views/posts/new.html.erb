@@ -1,20 +1,2 @@
-<%= form_with(model: @post, local: true) do |form| %>
-<% if @post.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-     <ul>
-     <% @post.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-     </ul>
-   </div>
- <% end %>
-
-  <div class="post_text">
-    <%= form.label :text %>
-    <%= form.text_field :text %>
-  </div>
-  <%= form.submit %>
-<% end %>
-
-<%= link_to '掲示板一覧画面に戻る', posts_path %>
+<h2>掲示板に投稿する</h2>
+<%= render 'form' %>
