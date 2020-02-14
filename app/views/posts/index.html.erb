@@ -5,6 +5,7 @@
     <%= form.label :text_search %>
     <%= form.text_field :text %>
   <br>
+  
     <% Category.all.each do |cate|%>
        <div class="category_search">
          <%= form.check_box :categories_ids, {multiple: true, checked: cate[:checked], disabled: cate[:disabled], include_hidden: false}, cate[:id] %>

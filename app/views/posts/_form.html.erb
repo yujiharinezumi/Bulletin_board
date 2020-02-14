@@ -13,12 +13,13 @@
     <%= form.label :text %>
     <%= form.text_field :text %>
   </div>
-  <p>
+  <div class="box_container">
    <%= form.label :category, 'カテゴリ' %>
    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
      <%= category.label do %>
-       <%= category.check_box %>
-       <%= category.text %>
+
+       <span><%= category.check_box %></span>
+       <span><%= category.text %></span>
      <% end %>
    <% end %>
   </p>
