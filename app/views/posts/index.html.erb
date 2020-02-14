@@ -4,15 +4,16 @@
     <th>ユーザー名</th>
     <th>内容</th>
   </tr>
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.user.name %></td>
-    <td><%= post.text %></td>
-    <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
-    <td><%= link_to '投稿の編集する', edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '投稿を削除する', post_path(post.id), method: :delete,data: { confirm: '本当に編集していいですか？'} %></td>
-  </tr>
-<% end %>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.user.name %></td>
+      <td><%= post.text %></td>
+      <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+      <% if post.user.id == current_user.id %>
+        <td><%= link_to '投稿の編集する', edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to '投稿を削除する', post_path(post.id), method: :delete,data: { confirm: '本当に編集していいですか？'} %></td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
-
 <%= link_to '掲示板投稿する', new_post_path %>
