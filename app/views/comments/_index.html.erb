@@ -1,9 +1,10 @@
 <ul>
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
-      <li>
-        <p><%= comment.content %></p>
-      </li>
+      <li><p>ユーザー名:<%= comment.user.name %></p></li>
+      <li><p>コメント:<%= comment.content %></p></li>
+
+        <%= link_to t('common.destroy'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %>
     <% end %>
   <% end %>
 </ul>
