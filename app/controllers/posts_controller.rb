@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update,:destroy]
   before_action :check_user, only:[:edit,:update,:destroy]
+
   def index
-    @posts = Post.all.search(params[:search])
+    @posts = Post.all.text_search(params.dig(:post,:text)).category_search(params.dig(:post, :categories_ids)).order(id:"DESC")
   end
 
   def new
