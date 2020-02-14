@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user,only: [:show,:edit,:update]
+  before_action :set_user,only: [:show,:edit,:update,:destroy]
   def new
     @user = User.new
   end
@@ -20,13 +20,18 @@ class UsersController < ApplicationController
   def edit
   end
 
-   def update
-     if @user.update(user_params)
-       redirect_to posts_path,notice:"ユーザー情報を編集しました！"
-     else
-       render :edit
-     end
-   end
+  def update
+    if @user.update(user_params)
+      redirect_to posts_path,notice:"ユーザー情報を編集しました！"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to new_user_path, notice:"アカウントを削除しました！"
+  end
 
   private
 
