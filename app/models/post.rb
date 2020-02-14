@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   has_many :categorizes, dependent: :destroy
   has_many :categories, through: :categorizes
   validates :text, presence: true
+
+  def self.search(search)
+    search ? where('text LIKE ?', "%#{search}%") : all
+  end
 end

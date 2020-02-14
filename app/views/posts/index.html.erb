@@ -1,13 +1,24 @@
 <h1>掲示板一覧</h1>
+<h2>検索</h2>
+<%= form_tag(posts_path, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 <table>
   <tr>
     <th>ユーザー名</th>
     <th>内容</th>
+    <th>カテゴリー</th>
   </tr>
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.user.name %></td>
       <td><%= post.text %></td>
+      <td>
+        <% post.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+      </td>
       <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
       <% if post.user.id == current_user.id %>
         <td><%= link_to '投稿の編集する', edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
