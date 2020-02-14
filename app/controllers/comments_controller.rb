@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_post
   def create
 
     @post = Post.find(params[:post_id])
@@ -10,6 +11,21 @@ class CommentsController < ApplicationController
         format.js { render :index }
       else
         format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
+      end
+    end
+  end
+
+  def edit
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+    @comment = @post.comments.find(params[:id])
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.js { render :index}
+      else
+        format.js { render :errors }
       end
     end
   end
@@ -31,5 +47,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:post_id, :content)
+  end
+
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 end
