@@ -7,6 +7,7 @@
   <tr>
     <td><%= post.text %></td>
     <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+    <td><%= link_to '投稿の編集する', edit_post_path(post.id) %></td>
   </tr>
 <% end %>
 </table>
