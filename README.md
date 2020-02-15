@@ -15,8 +15,7 @@
 - [ ] ログイン機能
 - [ ] 文章の投稿機能
 - [ ] 投稿に対するコメント機能
-- [ ] 検索機能
-- [ ] カテゴライズ機能
+- [ ] ワードやカテゴリーを用いた検索機能
 
 # カタログ設計
 https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8hKE/edit#gid=0
@@ -34,8 +33,6 @@ https://docs.google.com/spreadsheets/d/1Mhn36VhOUSuRNjvGwkQTS-shFwmxaivPIRheb6S8
 
 # 使用gem一覧
 
-## 検索機能
-* ransack
 ## デバッグ
 * pry-rails
 * better_errors

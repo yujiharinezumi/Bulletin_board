@@ -3,9 +3,9 @@
     <div id="error_explanation">
       <h2><%= @post.errors.count %>件のエラーがあります。</h2>
       <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -13,16 +13,13 @@
     <%= form.label :text %>
     <%= form.text_field :text %>
   </div>
-  <div class="box_container">
-   <%= form.label :category, 'カテゴリ' %>
-   <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-     <%= category.label do %>
-
-       <span><%= category.check_box %></span>
-       <span><%= category.text %></span>
-     <% end %>
-   <% end %>
-  </p>
+  <%= form.label :category, 'カテゴリ' %>
+  <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+    <%= category.label do %>
+      <span><%= category.check_box %></span>
+      <span><%= category.text %></span>
+    <% end %>
+  <% end %>
   <%= form.submit %>
 <% end %>
 <%= link_to "投稿一覧画面にもどる", posts_path %>

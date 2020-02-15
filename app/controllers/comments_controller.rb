@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
+        format.html { redirect_to post_path(@post), notice: 'コメントが空白または100文字以上のため投稿に失敗しました。' }
       end
     end
   end
