@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :categorizes, dependent: :destroy
   has_many :categories, through: :categorizes
-  validates :text, presence: true,, length: { maximum: 150 }
+  validates :text, presence: true, length: { maximum: 150 }
 
   # テキストで検索できるようにする
   scope :text_search, -> (text) {
