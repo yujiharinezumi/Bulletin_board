@@ -4,7 +4,6 @@ require 'support/utilities'
 RSpec.describe 'Posts', type: :system do
   before do
     @user1 = FactoryBot.create(:user_first)
-    @user2 = FactoryBot.create(:user_second)
     @post1 = FactoryBot.create(:post_first, user_id: @user1.id)
     log_in @user1
   end
