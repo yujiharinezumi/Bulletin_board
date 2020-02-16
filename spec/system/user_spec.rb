@@ -43,5 +43,15 @@ RSpec.describe 'Users', type: :system do
       expect(page).to have_content('Password confirmationとPasswordの入力が一致しません')
     end
 
+    it 'ユーザーの新規登録のテスト' do
+      visit root_path
+      fill_in('user_name',with: 'a')
+      fill_in('user_email', with: 'a@gmail.com')
+      fill_in('user_password', with: 'aaaaaa')
+      fill_in('user_password_confirmation', with: 'aaaaaa')
+      click_button 'commit'
+      expect(page).to have_content 'aのページ'
+    end
+
   end
 end
