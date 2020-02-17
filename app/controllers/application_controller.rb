@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def already_logged_in
+    if current_user != nil
+      flash[:notice] = "すでにログインしています"
+      redirect_to posts_path
+    end
+  end
 end
