@@ -9,13 +9,15 @@
   </div>
 <% end %>
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Create my account" %>
+<div>
+  <p class="user_form"><%= f.label :name %></p>
+  <p class="user_form"><%= f.text_field :name,placeholder:"例)田中 太郎" %></p>
+  <p class="user_form"><%= f.label :email %></p>
+  <p class="user_form"><%= f.email_field :email,placeholder:"例) example@text.com" %></p>
+  <p class="user_form"><%= f.label :password %></p>
+  <p class="user_form"><%= f.password_field :password,placeholder:"6文字以上" %></p>
+  <p class="user_form"><%= f.label :password_confirmation %></p>
+  <p class="user_form"><%= f.password_field :password_confirmation,placeholder:"同じパスワード" %></p>
+  <p class="user_form create_account"><%= f.submit "Create my account",class:"btn btn-info" %></p>
+</div>
 <% end %>
