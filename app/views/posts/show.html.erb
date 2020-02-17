@@ -1,4 +1,4 @@
-<h1>投稿詳細画面</h1>
+<h1 class="post_header">投稿詳細画面</h1>
 <p>内容: <%= @post.text %></p>
 <% if @post.user.id == current_user.id %>
   <%= link_to '編集', edit_post_path(@post) %>
