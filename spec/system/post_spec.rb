@@ -57,4 +57,20 @@ RSpec.describe 'Posts', type: :system do
     click_on 'search'
     expect(page).to have_content('AAA')
   end
+
+  it 'ユーザーカテゴリーで検索成功テスト' do
+    # テストをするたびにカテゴリーのIDが１づつ増えていく
+    check 'post_categories_ids_30'
+    click_on 'search'
+    expect(page).to have_content('HTML')
+  end
+
+  it 'ユーザーカテゴリーと文章で検索成功テスト' do
+    # テストをするたびにカテゴリーのIDが１づつ増えていく
+    fill_in('post_text',with:"A")
+    check 'post_categories_ids_31'
+    click_on 'search'
+    expect(page).to have_content('HTML')
+    expect(page).to have_content('AAA')
+  end
 end
