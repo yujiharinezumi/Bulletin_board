@@ -52,6 +52,12 @@ RSpec.describe 'Users', type: :system do
       click_button 'commit'
       expect(page).to have_content 'aのページ'
     end
+
+    it '未登録ユーザーは投稿一覧にいけないテスト' do
+      visit posts_path
+      expect(page).to have_content 'ログインが必要です'
+
+    end
   end
 
   describe 'ログインのテスト' do
@@ -84,16 +90,15 @@ RSpec.describe 'Users', type: :system do
     before do
       @user1 = FactoryBot.create(:user_first)
       @user2 = FactoryBot.create(:user_second)
+      log_in @user1
     end
 
     it 'ユーザーの詳細画面に遷移するテスト' do
-      log_in @user1
       click_on 'Profile'
       expect(page).to have_content 'aのページ'
     end
 
     it 'ユーザーの編集するテスト' do
-      log_in @user1
       click_on 'Profile'
       click_on 'プロフィールの編集'
       page.driver.browser.switch_to.alert.accept
@@ -107,11 +112,17 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'ユーザーの削除するテスト' do
-      log_in @user1
       click_on 'Profile'
       click_on 'アカウントの削除'
       page.driver.browser.switch_to.alert.accept
       expect(page).to have_content 'アカウントを削除しました！'
+    end
+
+    it '登録ユーザーがloginやsignup画面に遷移できないテスト' do
+      visit new_session_path
+      expect(page).to have_content 'すでにログインしています'
+      visit new_user_path
+      expect(page).to have_content 'すでにログインしています'
     end
   end
 end
