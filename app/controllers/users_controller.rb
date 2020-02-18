@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user,only: [:show,:edit,:update,:destroy]
   before_action :check_user,only: [:edit,:update,:destroy]
-  before_action :authenticate_user,only: [:edit,:update,:show,:destroy]
-  before_action :already_logged_in, only: [:new,:create]
+  before_action :authenticate_user,only: [:index, :edit, :update, :show, :destroy]
+  before_action :already_logged_in, only: [:new, :create]
 
   def new
     @user = User.new
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to user_path(@user.id)
+      redirect_to posts_path,notice:"ようこそ掲示板サイトへ！"
     else
       render :new
     end
