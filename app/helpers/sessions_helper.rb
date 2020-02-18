@@ -15,4 +15,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def guest_user
+    current_user == User.find_by(email: 'test@example.com')
+  end
 end

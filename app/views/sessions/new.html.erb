@@ -6,3 +6,5 @@
   <p class="user_form"><%= f.password_field :password ,class:"form-control" %></p>
   <p class="user_form create_account"><%= f.submit "Log in",class:"btn btn-info" %></p>
 <% end %>
+
+ <%= link_to 'ゲストユーザー', guest_path, method: :post, class: 'btn btn-success' %>

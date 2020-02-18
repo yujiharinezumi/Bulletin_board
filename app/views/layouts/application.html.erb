@@ -14,6 +14,18 @@
     <%= render "layouts/notice" %>
     <%= yield %>
 
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+   <script>
+     bubbly({
+       colorStart: "#fff4e6",
+       colorStop: "#ffe9e4",
+       blur: 2,
+       bubbles: 40,
+       compose: "source-over",
+       bubbleFunc:() => `hsla(${Math.random() * 50}, 100%, 50%, .3)`
+     });
+   </script>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

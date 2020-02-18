@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  post '/guest', to: 'guest_sessions#create'
 end

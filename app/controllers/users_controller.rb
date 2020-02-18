@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :check_user,only: [:edit,:update,:destroy]
   before_action :authenticate_user,only: [:index, :edit, :update, :show, :destroy]
   before_action :already_logged_in, only: [:new, :create]
+  before_action :guest_user_authenticate, only: [:edit, :update, :destroy]
+
 
   def new
     @user = User.new
@@ -51,6 +53,12 @@ class UsersController < ApplicationController
 
   def check_user
     if @user.id != current_user.id
+      redirect_to posts_path,notice:"権限がありません"
+    end
+  end
+
+  def guest_user_authenticate
+    if current_user != guest_user
       redirect_to posts_path,notice:"権限がありません"
     end
   end
