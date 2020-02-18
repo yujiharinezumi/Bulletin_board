@@ -1,12 +1,24 @@
 <h1 class="post_header">投稿詳細画面</h1>
-<p>内容: <%= @post.text %></p>
-<% if @post.user.id == current_user.id %>
-  <%= link_to '編集', edit_post_path(@post) %>
-  <%= link_to '削除', edit_post_path(@post) %>
-<% end %>
-<p>コメント一覧</p>
+<div class="post_box">
+  <p>名前:<%= @post.user.name %></p>
+  <p>投稿内容:<%= @post.text %></p>
+  <span>カテゴリー:</span>
+  <% @post.categories.each do |category| %>
+    <% if category.present? %>
+      <%= category.name %>
+    <% end %>
+  <% end %>
+  <br>
+  <% if @post.user.id == current_user.id %>
+    <%= link_to '編集', edit_post_path(@post) %>
+    <%= link_to '削除', edit_post_path(@post) %>
+  <% end %>
+</div>
+<div class="back_button">
+  <%= link_to "投稿一覧画面にもどる", posts_path,class:"btn btn-info" %>
+</div>
+<h4 class="post_header">コメント一覧</h4>
 <div id="comments_area">
   <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
 </div>
 <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-<%= link_to "投稿一覧画面にもどる", posts_path %>

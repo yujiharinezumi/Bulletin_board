@@ -10,10 +10,9 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content,placeholder:"コメントを100文字以内で入力してください。",class:"comment_form" %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-info" %>
   </div>
 <% end %>
