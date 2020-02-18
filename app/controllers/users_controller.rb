@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to posts_path,notice:"ようこそ掲示板サイトへ！"
     else
+      flash.now[:danger] = 'サインアップに失敗しました'
       render :new
     end
   end
