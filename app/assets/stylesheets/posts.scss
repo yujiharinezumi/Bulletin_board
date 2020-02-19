@@ -32,13 +32,12 @@ $sp: 480px;  // スマホ
 }
 
 .search_area{
+  margin:auto;
   @include pc{
     width:40%;
-    margin:auto;
   };
   @include sp{
     width:84%;
-    margin:auto;
   };
 }
 
@@ -48,55 +47,45 @@ $sp: 480px;  // スマホ
 }
 
 .search_form{
+  margin: auto;
+  margin-top:20px;
   @include pc{
     width: 20%;
-    margin: auto;
-    margin-top:20px;
   };
   @include sp{
     width: 50%;
-    margin: auto;
-    margin-top:20px;
   };
 }
 
 .post_box{
+  position: relative;
+  background: #ffe5da;
+  box-shadow: 0px 0px 0px 5px #ffe5da;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  margin:auto;
+  margin-bottom:30px;
+  margin-top:30px;
   @include pc{
-    position: relative;
-    background: #ffe5da;
-    box-shadow: 0px 0px 0px 5px #ffe5da;
-    border: dashed 2px white;
-    padding: 0.2em 0.5em;
-    color: #454545;
     height:250px;
     width:60%;
-    margin:auto;
-    margin-bottom:30px;
-    margin-top:30px;
   };
   @include sp{
-    position: relative;
-    background: #ffe5da;
-    box-shadow: 0px 0px 0px 5px #ffe5da;
-    border: dashed 2px white;
-    padding: 0.2em 0.5em;
-    color: #454545;
     height:280px;
     width:85%;
-    margin:auto;
-    margin-bottom:30px;
-    margin-top:30px;
   };
 }
+
 .post_box:after{
-    position: absolute;
-    content: '';
-    right: -7px;
-    top: -7px;
-    border-width: 0 15px 15px 0;
-    border-style: solid;
-    border-color: #ffdb88 #fff #ffdb88;
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 .post_box p {
     margin: 0;
@@ -145,20 +134,15 @@ $sp: 480px;  // スマホ
 }
 
 .post_text{
+  margin:auto;
+  margin-top:30px;
+  margin-bottom:50px;
+  height:150px;
   @include pc{
-    width:80%;
-    margin:auto;
-    margin-top:30px;
-    margin-bottom:50px;
-    height:150px;
+    width:88%;
   };
-
   @include sp{
     width:94%;
-    margin:auto;
-    margin-top:30px;
-    margin-bottom:50px;
-    height:150px;
   };
 }
 
@@ -180,15 +164,13 @@ $sp: 480px;  // スマホ
 }
 
 .create_button{
+  margin:auto;
+  margin-top:30px;
   @include pc{
     width:14%;
-    margin:auto;
-    margin-top:30px;
   };
   @include sp{
     width:45%;
-    margin:auto;
-    margin-top:30px;
   };
 }
 

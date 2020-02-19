@@ -11,13 +11,13 @@
 <%= form_with(model: @user, local: true) do |f| %>
 <div>
   <p class="user_form"><%= f.label :name %></p>
-  <p class="user_form"><%= f.text_field :name,class:"form-control",placeholder:"例)田中 太郎" %></p>
+  <p class="user_form"><%= f.text_field :name,class:"form-control ",placeholder:"例)田中 太郎" %></p>
   <p class="user_form"><%= f.label :email %></p>
-  <p class="user_form"><%= f.email_field :email,class:"form-control",placeholder:"例) example@text.com" %></p>
+  <p class="user_form"><%= f.email_field :email,class:"form-control ",placeholder:"例) example@text.com" %></p>
   <p class="user_form"><%= f.label :password %></p>
-  <p class="user_form"><%= f.password_field :password,class:"form-control",placeholder:"6文字以上" %></p>
+  <p class="user_form"><%= f.password_field :password,class:"form-control ",placeholder:"6文字以上" %></p>
   <p class="user_form"><%= f.label :password_confirmation %></p>
-  <p class="user_form"><%= f.password_field :password_confirmation,class:"form-control",placeholder:"同じパスワード" %></p>
-  <p class="user_form create_account"><%= f.submit "Create my account",class:"btn btn-info" %></p>
+  <p class="user_form"><%= f.password_field :password_confirmation,class:"form-control ",placeholder:"同じパスワード" %></p>
+  <p class="user_form create_account"><%= f.submit "Create my account",class:"btn btn-blue" %></p>
 </div>
 <% end %>

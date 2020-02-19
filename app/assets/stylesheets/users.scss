@@ -2,11 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$pc: 1500px; // PC
+$tab: 770px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
 // design for Signup
 
 .user_form{
-  width:50%;
   margin:auto;
+  @include pc{
+    width:50%;
+  };
+  @include sp{
+    width:80%;
+  };
 }
 
 .create_account{
@@ -20,13 +45,39 @@
 }
 
 .user_buttons{
-  width:33%;
   margin:auto;
   margin-top:30px;
   margin-bottom:20px;
+  display: flex;
+  @include pc{
+    width:28%;
+  };
+  @include sp{
+    width:85%;
+  };
 }
 
 .back_index{
-  width:12%;
   margin:auto;
+  @include pc{
+    width:12%;
+  };
+  @include sp{
+    width:30%;
+  };
+}
+
+.edit_button{
+  margin-right:20px;
+}
+
+.guest_login{
+  margin:auto;
+  margin-top:30px;
+  @include pc{
+    width:50%;
+  };
+  @include sp{
+    width:80%;
+  };
 }

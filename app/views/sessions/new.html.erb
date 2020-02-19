@@ -4,7 +4,8 @@
   <p class="user_form"><%= f.email_field :email,class:"form-control" %></p>
   <p class="user_form"><%= f.label :password %></p>
   <p class="user_form"><%= f.password_field :password ,class:"form-control" %></p>
-  <p class="user_form create_account"><%= f.submit "Log in",class:"btn btn-info" %></p>
+  <p class="user_form create_account"><%= f.submit "Log in",class:"btn btn-blue" %></p>
 <% end %>
-
- <%= link_to 'ゲストユーザー', guest_path, method: :post, class: 'btn btn-success' %>
+<div class="guest_login">
+  <%= link_to 'ゲストユーザーでログインする', guest_path, method: :post, class: 'btn btn-green' %>
+</div>

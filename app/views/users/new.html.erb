@@ -1,2 +1,5 @@
 <h1 class="user_header" >Sign up</h1>
 <%= render 'form' %>
+<div class="guest_login">
+  <%= link_to 'ゲストユーザーでログインする', guest_path, method: :post, class: 'btn btn-green' %>
+</div>
