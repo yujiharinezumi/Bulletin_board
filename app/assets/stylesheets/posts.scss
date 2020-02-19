@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$pc: 1500px; // PC
+$tab: 770px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+
 .category_search{
   display: inline-block;
 }
@@ -11,8 +32,14 @@
 }
 
 .search_area{
-  width:40%;
-  margin:auto;
+  @include pc{
+    width:40%;
+    margin:auto;
+  };
+  @include sp{
+    width:84%;
+    margin:auto;
+  };
 }
 
 .post_header{
@@ -21,12 +48,20 @@
 }
 
 .search_form{
-  width: 20%;
-  margin: auto;
-  margin-top:20px;
+  @include pc{
+    width: 20%;
+    margin: auto;
+    margin-top:20px;
+  };
+  @include sp{
+    width: 50%;
+    margin: auto;
+    margin-top:20px;
+  };
 }
 
 .post_box{
+  @include pc{
     position: relative;
     background: #ffe5da;
     box-shadow: 0px 0px 0px 5px #ffe5da;
@@ -38,6 +73,20 @@
     margin:auto;
     margin-bottom:30px;
     margin-top:30px;
+  };
+  @include sp{
+    position: relative;
+    background: #ffe5da;
+    box-shadow: 0px 0px 0px 5px #ffe5da;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    color: #454545;
+    height:280px;
+    width:85%;
+    margin:auto;
+    margin-bottom:30px;
+    margin-top:30px;
+  };
 }
 .post_box:after{
     position: absolute;
@@ -55,28 +104,62 @@
 }
 
 .comment_form{
-  width:50%;
-  height:200px;
-  margin-left:250px;
+  @include pc{
+    width:70%;
+    height:200px;
+    margin-left:250px;
+  };
+  @include sp{
+    width:90%;
+    height:200px;
+    margin-left:20px;
+  };
+
 }
 
 .actions{
-  width:10%;
-  margin:auto;
-  margin-top:30px;
+  @include pc{
+    width:10%;
+    margin:auto;
+    margin-top:30px;
+    margin-bottom:20px;
+  };
+
+  @include sp{
+    width:25%;
+    margin:auto;
+    margin-top:30px;
+    margin-bottom:20px;
+  };
 }
 
 .back_button{
-  width:15%;
-  margin:auto;
+  @include pc{
+    width:15%;
+    margin:auto;
+  };
+  @include sp{
+    width:50%;
+    margin:auto;
+  };
 }
 
 .post_text{
-  width:80%;
-  margin:auto;
-  margin-top:30px;
-  margin-bottom:50px;
-  height:150px;
+  @include pc{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+    margin-bottom:50px;
+    height:150px;
+  };
+
+  @include sp{
+    width:94%;
+    margin:auto;
+    margin-top:30px;
+    margin-bottom:50px;
+    height:150px;
+  };
 }
 
 .category_list{
@@ -86,14 +169,27 @@
 }
 
 .buttons{
-  width:60%;
-  margin:auto;
+  @include pc{
+    width:60%;
+    margin:auto;
+  };
+  @include sp{
+    width:57%;
+    margin:auto;
+  };
 }
 
 .create_button{
-  width:14%;
-  margin:auto;
-  margin-top:30px;
+  @include pc{
+    width:14%;
+    margin:auto;
+    margin-top:30px;
+  };
+  @include sp{
+    width:45%;
+    margin:auto;
+    margin-top:30px;
+  };
 }
 
 .search_buttons{
