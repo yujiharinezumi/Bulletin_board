@@ -1,6 +1,20 @@
 <h1 class="user_header"><%= @user.name %>のページ</h1>
+<h3 class="user_header">ようこそ掲示板サイトへ！</h3>
+<p class="user_header">掲示板サイトでは、自分な好きな文章を投稿したり、他のユーザーの投稿を見て
+<br>
+コメントをつけて、ネット上のユーザーと交流することができます。
+<br>
+また掲示板で投稿された投稿は、文章やカテゴリーで検索をかけることができます。
+<br>
+ぜひ掲示板サイトをお楽しみください！
+</p>
+<div class="user_buttons">
 <% if @user.id == current_user.id %>
-  <%= link_to 'プロフィールの編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' } %>
-  <%= link_to 'アカウントの削除', user_path(@user.id),method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+  <%= link_to 'プロフィールの編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' },class:"btn btn-blue" %>
+  <%= link_to 'アカウントの削除', user_path(@user.id),method: :delete, data: { confirm: '本当に削除していいですか？' },class:"btn btn-red" %>
 <% end %>
-<%= link_to '掲示板に戻る',posts_path %>
+</div>
+
+<div class="back_index">
+  <%= link_to '掲示板に戻る',posts_path,class:"btn btn-green" %></p>
+</div

@@ -17,3 +17,14 @@
 .btn-blue:hover {
   color: #fff;
 }
+
+
+.btn-red,
+.btn-red.disabled, .btn-red:disabled {
+  color: #fff;
+  background-color: #f95747;
+}
+
+.btn-red:hover {
+  color: #fff;
+}
