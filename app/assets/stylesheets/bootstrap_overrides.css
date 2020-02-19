@@ -28,3 +28,13 @@
 .btn-red:hover {
   color: #fff;
 }
+
+.btn-orange,
+.btn-orange.disabled, .btn-orange:disabled {
+  color: #fff;
+  background-color: #fb9238;
+}
+
+.btn-orange:hover {
+  color: #fff;
+}

@@ -22,7 +22,10 @@
       <% end %>
     </div>
   <% end %>
-  <p><%= form.submit class:"btn btn-blue" %></p>
+  <div class="create_buttons">
+    <p><%= form.submit class:"btn btn-blue" %></p>
+    <%= link_to "投稿一覧画面にもどる", posts_path,class:"btn btn-green" %>
+  </div>
 <% end %>
-<%= link_to "投稿一覧画面にもどる", posts_path,class:"btn btn-green" %>
+
 </div>

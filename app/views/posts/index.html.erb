@@ -6,7 +6,7 @@
 <%= form_with(model: Post.new,method: :get,local: true,url: posts_path) do |form| %>
   <div class="search_form">
     <%= form.label :text_search %>
-    <%= form.text_field :text %>
+    <%= form.text_field :text,placeholder:"ワードで検索" %>
   </div>
   <br>
   <div class="search_area">
@@ -21,7 +21,7 @@
   <br>
   <%= form.hidden_field :search, value: 'true' %>
   <div class="search_buttons">
-  <%= form.submit '検索',name:'search',class:"btn btn-blue"%>
+  <%= form.submit '検索',name:'search',class:"btn btn-orange search_button"%>
   <%= link_to "検索を戻す", posts_path,class:"btn btn-green" %>
 </div>
 <% end %>

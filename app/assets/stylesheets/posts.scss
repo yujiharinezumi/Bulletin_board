@@ -29,7 +29,7 @@ $sp: 480px;  // スマホ
 .search_area{
   margin:auto;
   @include pc{
-    width:40%;
+    width:32%;
   };
   @include tab{
     width:60%;
@@ -154,13 +154,15 @@ $sp: 480px;  // スマホ
   height:150px;
   @include pc{
     width:88%;
+    margin-left:80px;
   };
   @include tab{
     width:88%;
-    margin-left:76px;
+    margin-left:50px;
   };
   @include sp{
     width:94%;
+    margin-left:11px;
   };
 }
 
@@ -199,3 +201,24 @@ $sp: 480px;  // スマホ
   margin:auto;
   margin-top:20px;
 }
+
+.search_button{
+  @include pc{
+    margin-right: 30px;
+  };
+  @include sp{
+    margin-bottom:10px;
+  };
+}
+//
+// .create_buttons{
+//   @include pc{
+//     display: flex;
+//   };
+//   @include tab{
+//
+//   };
+//   @include sp{
+//   
+//   };
+// }
