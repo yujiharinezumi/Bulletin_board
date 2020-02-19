@@ -1,3 +1,29 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// コメントの吹き出し
+.balloon1 {
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eafff9;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:40px;
+  width:83%;
+}
+
+// コメントの吹き出し三角を作る
+.balloon1::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 29px;
+  border-right: 15px solid #eafff9;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}

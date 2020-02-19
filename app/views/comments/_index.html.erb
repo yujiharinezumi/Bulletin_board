@@ -1,12 +1,18 @@
-<ul>
-  <% comments.each do |comment| %>
-    <% if comment.id.present? %>
-      <li><p>ユーザー名:<%= comment.user.name %></p></li>
-      <li id="<%=comment.id %>"><p>コメント:<%= comment.content %></p></li>
+<% comments.each do |comment| %>
+  <% if comment.content.present? %>
+    <div class="balloon1">
+      <div class="content">
+        <div class="header">
+          <strong><%= comment.user.name %>さん</strong>
+        </div>
+        <div class="list">
+          <span id="<%=comment.id %>"><%= comment.content %></span>
+        </div>
+      </div>
       <% if comment.user.id == current_user.id %>
         <%= link_to t('common.edit'), edit_post_comment_path(comment.post, comment), remote:true %>
         <%= link_to t('common.destroy'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
-</ul>
+<% end %>
