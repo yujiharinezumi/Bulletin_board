@@ -10,17 +10,19 @@
     </div>
   <% end %>
   <div class="post_text">
-    <%= form.label :text %>
-    <%= form.text_field :text %>
+    <%= form.text_field :text,class:"post_text",placeholder:"150字以内で入力してください" %>
   </div>
-  <%= form.label :category, 'カテゴリ' %>
+
+  <div class="buttons">
   <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-    <%= category.label do %>
-      <span><%= category.check_box %></span>
-      <span><%= category.text %></span>
-    <% end %>
+    <div class="category_list">
+      <%= category.label do %>
+        <span><%= category.check_box %></span>
+        <span><%= category.text %></span>
+      <% end %>
+    </div>
   <% end %>
-  <br>
-  <%= form.submit class:"btn btn-info" %>
+  <p><%= form.submit class:"btn btn-blue" %></p>
 <% end %>
-<%= link_to "投稿一覧画面にもどる", posts_path %>
+<%= link_to "投稿一覧画面にもどる", posts_path,class:"btn btn-green" %>
+</div>
