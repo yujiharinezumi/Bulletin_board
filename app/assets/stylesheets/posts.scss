@@ -22,11 +22,21 @@ $sp: 480px;  // スマホ
   }
 }
 
+// post index
+
+// 見出しを中央揃えに
+.post_header{
+  text-align:center;
+  margin-top:20px;
+}
+
+// カテゴリーを横並びにするため
 .category_search{
   display: inline-block;
 }
 
-.search_area{
+// カテゴリー一覧の幅を調整
+.category_area{
   margin:auto;
   @include pc{
     width:32%;
@@ -39,11 +49,7 @@ $sp: 480px;  // スマホ
   };
 }
 
-.post_header{
-  text-align:center;
-  margin-top:20px;
-}
-
+// ワード、カテゴリー検索の幅調整
 .search_form{
   margin: auto;
   margin-top:20px;
@@ -58,6 +64,24 @@ $sp: 480px;  // スマホ
   };
 }
 
+// 検索、検索を戻すボタン
+.search_buttons{
+  width:50%;
+  margin:auto;
+  margin-top:20px;
+}
+
+// 検索ボタン
+.search_button{
+  @include pc{
+    margin-right: 30px;
+  };
+  @include sp{
+    margin-bottom:10px;
+  };
+}
+
+// 投稿のカード
 .post_box{
   position: relative;
   background: #ffe5da;
@@ -82,6 +106,7 @@ $sp: 480px;  // スマホ
   };
 }
 
+// カードの折り目
 .post_box:after{
   position: absolute;
   content: '';
@@ -92,48 +117,14 @@ $sp: 480px;  // スマホ
   border-color: #ffdb88 #fff #ffdb88;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 }
+
+// カードのコンテンツの隙間を埋める
 .post_box p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.comment_form{
-  height:200px;
-  @include pc{
-    width:70%;
-    margin-left:250px;
-  };
-  @include tab{
-    width:80%;
-    margin-left:85px;
-  };
-  @include sp{
-    width:90%;
-    margin-left:20px;
-  };
-}
-
-.actions{
-  @include pc{
-    width:10%;
-    margin:auto;
-    margin-top:30px;
-    margin-bottom:20px;
-  };
-  @include tab{
-    width:10%;
-    margin:auto;
-    margin-top:30px;
-    margin-bottom:20px;
-  };
-  @include sp{
-    width:25%;
-    margin:auto;
-    margin-top:30px;
-    margin-bottom:20px;
-  };
-}
-
+// 一覧に戻るボタン
 .back_button{
   margin:auto;
   @include pc{
@@ -147,6 +138,7 @@ $sp: 480px;  // スマホ
   };
 }
 
+// post_new 投稿フォーム
 .post_text{
   margin:auto;
   margin-top:30px;
@@ -166,11 +158,12 @@ $sp: 480px;  // スマホ
   };
 }
 
+// _formのカテゴリーを並べる
 .category_list{
   marign:20px;
   display: inline-block;
-
 }
+
 
 .buttons{
   margin:auto;
@@ -182,6 +175,7 @@ $sp: 480px;  // スマホ
   };
 }
 
+// 新規投稿するのボタン
 .create_button{
   margin:auto;
   margin-top:30px;
@@ -195,30 +189,3 @@ $sp: 480px;  // スマホ
     width:45%;
   };
 }
-
-.search_buttons{
-  width:50%;
-  margin:auto;
-  margin-top:20px;
-}
-
-.search_button{
-  @include pc{
-    margin-right: 30px;
-  };
-  @include sp{
-    margin-bottom:10px;
-  };
-}
-//
-// .create_buttons{
-//   @include pc{
-//     display: flex;
-//   };
-//   @include tab{
-//
-//   };
-//   @include sp{
-//   
-//   };
-// }
