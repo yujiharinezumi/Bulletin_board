@@ -33,7 +33,7 @@ RSpec.describe 'Comments', type: :system do
     click_on 'Edit'
     fill_in('edit_comment',with:"")
     click_on '更新する'
-    expect(page).to have_content('Contentを入力してください')
+    expect(page).to have_content('内容を入力してください')
   end
 
   it 'コメントを削除するテスト' do

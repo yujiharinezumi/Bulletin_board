@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password', with: 'aaaaaa')
       fill_in('user_password_confirmation', with: 'aaaaaa')
       click_button 'commit'
-      expect(page).to have_content('Nameを入力してください')
+      expect(page).to have_content('名前を入力してください')
     end
 
     it 'emailが空欄でエラーメッセージが出るテスト' do
@@ -20,7 +20,7 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password', with: 'aaaaaa')
       fill_in('user_password_confirmation', with: 'aaaaaa')
       click_button 'commit'
-      expect(page).to have_content('Emailを入力してください')
+      expect(page).to have_content('メールアドレスを入力してください')
    end
 
     it 'passwordが空欄でエラーメッセージが出るテスト' do
@@ -30,7 +30,7 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password', with: '')
       fill_in('user_password_confirmation', with: 'aaaaaa')
       click_button 'commit'
-      expect(page).to have_content('Passwordを入力してください')
+      expect(page).to have_content('パスワードを入力してください')
     end
 
     it 'password_confirmationが空欄でエラーメッセージが出るテスト' do
@@ -40,7 +40,7 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password', with: 'aaaaaa')
       fill_in('user_password_confirmation', with: '')
       click_button 'commit'
-      expect(page).to have_content('Password confirmationとPasswordの入力が一致しません')
+      expect(page).to have_content('確認用パスワードとパスワードの入力が一致しません')
     end
 
     it 'ユーザーの新規登録のテスト' do
@@ -50,13 +50,12 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password', with: 'aaaaaa')
       fill_in('user_password_confirmation', with: 'aaaaaa')
       click_button 'commit'
-      expect(page).to have_content 'aのページ'
+      expect(page).to have_content 'ようこそ掲示板サイトへ！'
     end
 
     it '未登録ユーザーは投稿一覧にいけないテスト' do
       visit posts_path
       expect(page).to have_content 'ログインが必要です'
-
     end
   end
 
@@ -94,12 +93,12 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'ユーザーの詳細画面に遷移するテスト' do
-      click_on 'Profile'
+      click_on 'aさんのプロフィール'
       expect(page).to have_content 'aのページ'
     end
 
     it 'ユーザーの編集するテスト' do
-      click_on 'Profile'
+      click_on 'aさんのプロフィール'
       click_on 'プロフィールの編集'
       page.driver.browser.switch_to.alert.accept
       fill_in('user_name',with: "aaaaaa")
@@ -107,12 +106,12 @@ RSpec.describe 'Users', type: :system do
       fill_in('user_password_confirmation',with: "aaaaaa")
       click_button 'commit'
       expect(page).to have_content 'ユーザー情報を編集しました！'
-      click_on 'Profile'
+      click_on 'aさんのプロフィール'
       expect(page).to have_content 'aaaaaaのページ'
     end
 
     it 'ユーザーの削除するテスト' do
-      click_on 'Profile'
+      click_on 'aさんのプロフィール'
       click_on 'アカウントの削除'
       page.driver.browser.switch_to.alert.accept
       expect(page).to have_content 'アカウントを削除しました！'
