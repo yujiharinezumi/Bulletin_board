@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   before_action :set_post
-  def create
+  before_action :set_comment, only: [:edit, :update, :destroy]
 
+  def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-
     respond_to do |format|
       if @comment.save
         format.js { render :index }
@@ -16,11 +16,10 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = @post.comments.find(params[:id])
+
   end
 
   def update
-    @comment = @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
         format.js { render :index}
@@ -31,8 +30,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
     respond_to do |format|
       if current_user.id == @comment.user.id
         @comment.destroy
@@ -51,5 +48,9 @@ class CommentsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
+  end
+
+  def set_comment
+    @comment = @post.comments.find(params[:id])
   end
 end

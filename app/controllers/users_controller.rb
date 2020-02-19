@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user,only: [:index, :edit, :update, :show, :destroy]
   before_action :already_logged_in, only: [:new, :create]
 
-
   def new
     @user = User.new
   end

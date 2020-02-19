@@ -1,5 +1,4 @@
 <h1 class="post_header">掲示板一覧</h1>
-
 <div class="create_button">
   <%= link_to '掲示板投稿する', new_post_path,class:"btn btn-blue " %>
 </div>
@@ -10,25 +9,24 @@
   </div>
   <br>
   <div class="category_area">
-  <% Category.all.each do |cate|%>
-    <div class="category_search">
-      <div class="category_form">
-        <%= form.check_box :categories_ids, {multiple: true, checked: cate[:checked], disabled: cate[:disabled], include_hidden: false}, cate[:id] %>
-        <label class="form-check-label"><%= cate.name %></label>
+    <% Category.all.each do |cate|%>
+      <div class="category_search">
+        <div class="category_form">
+          <%= form.check_box :categories_ids, {multiple: true, checked: cate[:checked], disabled: cate[:disabled], include_hidden: false}, cate[:id] %>
+          <label class="form-check-label"><%= cate.name %></label>
+        </div>
       </div>
+    <% end %>
+    <br>
+    <%= form.hidden_field :search, value: 'true' %>
+    <div class="search_buttons">
+      <%= form.submit '検索',name:'search',class:"btn btn-orange search_button"%>
+      <%= link_to "検索を戻す", posts_path,class:"btn btn-green" %>
     </div>
-  <% end %>
-  <br>
-  <%= form.hidden_field :search, value: 'true' %>
-  <div class="search_buttons">
-  <%= form.submit '検索',name:'search',class:"btn btn-orange search_button"%>
-  <%= link_to "検索を戻す", posts_path,class:"btn btn-green" %>
-</div>
+  </div>
 <% end %>
-</div>
-
 <% @posts.each do |post| %>
-<div class="post_box">
+  <div class="post_box">
     <p>名前:<%= post.user.name %></p>
     <p>投稿内容:<%= post.text %></p>
     <span>カテゴリー:</span>
@@ -37,13 +35,11 @@
         <%= category.name %>
       <% end %>
     <% end %>
-
     <br>
-
     <%= link_to '詳細を確認する', post_path(post.id) %>
     <% if post.user.id == current_user.id %>
-      <td><%= link_to '投稿の編集する', edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to '投稿を削除する', post_path(post.id), method: :delete,data: { confirm: '本当に編集していいですか？'} %></td>
+      <%= link_to '投稿の編集する', edit_post_path(post.id), data: { confirm: '本当に編集していいですか？' } %>
+      <%= link_to '投稿を削除する', post_path(post.id), method: :delete,data: { confirm: '本当に編集していいですか？'} %>
     <% end %>
-    </div>
+  </div>
 <% end %>

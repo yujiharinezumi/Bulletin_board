@@ -9,12 +9,11 @@
 ぜひ掲示板サイトをお楽しみください！
 </p>
 <div class="user_buttons">
-<% if @user.id == current_user.id %>
-  <p><%= link_to 'プロフィールの編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' },class:"btn btn-blue edit_button" %></p>
-  <p><%= link_to 'アカウントの削除', user_path(@user.id),method: :delete, data: { confirm: '本当に削除していいですか？' },class:"btn btn-red" %></p>
-<% end %>
+  <% if @user.id == current_user.id %>
+    <p><%= link_to 'プロフィールの編集', edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？' },class:"btn btn-blue edit_button" %></p>
+    <p><%= link_to 'アカウントの削除', user_path(@user.id),method: :delete, data: { confirm: '本当に削除していいですか？' },class:"btn btn-red" %></p>
+  <% end %>
 </div>
-
 <div class="back_index">
   <%= link_to '掲示板に戻る',posts_path,class:"btn btn-green" %></p>
 </div

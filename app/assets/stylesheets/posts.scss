@@ -22,9 +22,8 @@ $sp: 480px;  // スマホ
   }
 }
 
-// post index
+//------post index-----
 
-// 見出しを中央揃えに
 .post_header{
   text-align:center;
   margin-top:20px;
@@ -71,7 +70,6 @@ $sp: 480px;  // スマホ
   margin-top:20px;
 }
 
-// 検索ボタン
 .search_button{
   @include pc{
     margin-right: 30px;
@@ -124,7 +122,6 @@ $sp: 480px;  // スマホ
   padding: 0;
 }
 
-// 一覧に戻るボタン
 .back_button{
   margin:auto;
   @include pc{
@@ -138,7 +135,7 @@ $sp: 480px;  // スマホ
   };
 }
 
-// post_new 投稿フォーム
+// -----post_new------
 .post_text{
   margin:auto;
   margin-top:30px;
@@ -164,8 +161,8 @@ $sp: 480px;  // スマホ
   display: inline-block;
 }
 
-
-.buttons{
+// 投稿フォームの下要素
+.form_buttons{
   margin:auto;
   @include pc{
     width:60%;
@@ -175,7 +172,6 @@ $sp: 480px;  // スマホ
   };
 }
 
-// 新規投稿するのボタン
 .create_button{
   margin:auto;
   margin-top:30px;

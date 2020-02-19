@@ -13,12 +13,12 @@
           <%= link_to "新規投稿", new_post_path %>
         </li>
       <% else %>
-      <li class="nav-item nav-link">
-        <%= link_to "Sign up", new_user_path %>
-      </li>
-      <li class="nav-item nav-link">
+        <li class="nav-item nav-link">
+          <%= link_to "Sign up", new_user_path %>
+        </li>
+        <li class="nav-item nav-link">
           <%= link_to "Login", new_session_path %>
-      </li>
+        </li>
       <% end %>
     </ul>
     <form class="form-inline">
