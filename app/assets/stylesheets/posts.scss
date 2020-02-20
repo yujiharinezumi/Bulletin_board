@@ -35,18 +35,18 @@ $sp: 480px;  // スマホ
 }
 
 // カテゴリー一覧の幅を調整
-// .category_area{
-//   margin:auto;
-//   @include pc{
-//     width:32%;
-//   };
-//   @include tab{
-//     width:60%;
-//   };
-//   @include sp{
-//     width:84%;
-//   };
-// }
+.category_area{
+  margin:auto;
+  @include pc{
+    width:32%;
+  };
+  @include tab{
+    width:60%;
+  };
+  @include sp{
+    width:84%;
+  };
+}
 
 // ワード、カテゴリー検索の幅調整
 .search_form{
