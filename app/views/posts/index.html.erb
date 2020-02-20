@@ -9,12 +9,11 @@
   </div>
   <br>
   <div class="category_area">
-    <p>test</p>
-    <% Category.all.each do |cate|%>
+    <% Category.all.each do |category|%>
       <div class="category_search">
         <div class="category_form">
-          <%= form.check_box :categories_ids, {multiple: true, checked: cate[:checked], disabled: cate[:disabled], include_hidden: false}, cate[:id] %>
-          <label><%= cate.name %></label>
+          <%= form.check_box :categories_ids, {multiple: true}, category[:id] %>
+          <label><%= category.name %></label>
         </div>
       </div>
     <% end %>
