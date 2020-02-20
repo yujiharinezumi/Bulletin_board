@@ -12,7 +12,7 @@
     <% Category.all.each do |category|%>
       <div class="category_search">
         <div class="category_form">
-          <%= form.check_box :categories_ids, {multiple: true}, category[:id] %>
+          <%= form.check_box :categories_ids, {multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false}, category[:id] %>
           <label><%= category.name %></label>
         </div>
       </div>
